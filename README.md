@@ -4,3 +4,4 @@
 2. Palindrome Number
 3. Merge Sorted Array
 4. Remove Element
+5. Remove Duplicates from Sorted Array
