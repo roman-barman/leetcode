@@ -5,3 +5,4 @@
 3. Merge Sorted Array
 4. Remove Element
 5. Remove Duplicates from Sorted Array
+6. Remove Duplicates from Sorted Array II
