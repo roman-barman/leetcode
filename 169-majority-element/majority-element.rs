@@ -1,27 +1,20 @@
 impl Solution {
     pub fn majority_element(nums: Vec<i32>) -> i32 {
-        let len = nums.len();
-        let half = len / 2;
+        let mut count = 0;
+        let mut value = 0;
 
-        if len == 1 {
-            return nums[0];
-        }
+        for i in 0..nums.len() {
+            let current_value = nums[i];
 
-        for i in 0..len {
-            let mut count = 1;
-            let val = nums[i];
-
-            for j in i + 1..len {
-                if nums[j] == val {
-                    count = count + 1;
-                }
-
-                if count > half {
-                    return val;
-                }
+            if current_value == value {
+                count = count + 1;
+            } else if count != 0 {
+                count = count - 1;
+            } else {
+                value = current_value;
             }
         }
 
-        0
+        value
     }
 }
