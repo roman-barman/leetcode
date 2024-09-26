@@ -7,3 +7,4 @@
 5. Remove Duplicates from Sorted Array
 6. Remove Duplicates from Sorted Array II
 7. Majority Element
+8. Rotate Array
