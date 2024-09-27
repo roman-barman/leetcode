@@ -7,16 +7,10 @@ impl Solution {
             return;
         }
 
-        let mut temp = Vec::with_capacity(nums.len());
-
         let start = len - k;
-        for i in start..len {
-            temp.push(nums[i]);
-        }
-
-        for i in 0..start {
-            temp.push(nums[i]);
-        }
+        let mut temp = Vec::from_iter(nums[start..len].iter().cloned());
+        temp.extend_from_slice(&nums[0..start]);
+        
 
         nums.clear();
         nums.extend_from_slice(&temp);
