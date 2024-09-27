@@ -1,27 +1,24 @@
 impl Solution {
     pub fn rotate(nums: &mut Vec<i32>, k: i32) {
-        if nums.len() < 2 {
+        let len =  nums.len();
+        let k = k as usize % len;
+
+        if nums.len() < 2 || k == 0 {
             return;
         }
 
-        let last_index = nums.len() - 1;
+        let mut temp = Vec::with_capacity(nums.len());
 
-        for _ in 0..(k as usize % nums.len()) {
-            let temp = nums[last_index];
-
-            let mut j = last_index - 1;
-
-            loop {
-                nums[j + 1] = nums[j];
-
-                if j == 0 {
-                    break;
-                }
-
-                j = j - 1;
-            }
-
-            nums[0] = temp;
+        let start = len - k;
+        for i in start..len {
+            temp.push(nums[i]);
         }
+
+        for i in 0..start {
+            temp.push(nums[i]);
+        }
+
+        nums.clear();
+        nums.extend_from_slice(&temp);
     }
 }
