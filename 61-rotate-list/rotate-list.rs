@@ -28,14 +28,14 @@ impl Solution {
         }
 
         let start = len - k;
-        let mut head_1 = head.clone();
+        let mut head_1 = head;
         let mut current = &mut head_1;
 
         for _ in 0..start - 1 {
             current = &mut current.as_mut().unwrap().next;
         }
 
-        let mut head_2  = current.as_ref().unwrap().next.clone();
+        let mut head_2  = current.as_mut().unwrap().next.take();
         current.as_mut().unwrap().next = None;
 
         let mut current = &mut head_2;
