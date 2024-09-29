@@ -20,8 +20,7 @@ impl Solution {
             return head;
         }
 
-
-        let len = len(&head);
+        let len = Self::len(&head);
         let k = k % len;
 
         if len < 2 || k == 0 {
@@ -49,17 +48,11 @@ impl Solution {
 
         head_2
     }
-}
 
-pub fn len(head: &Option<Box<ListNode>>) -> i32 {
-    let mut len = 0;
-    let head_binding = head.clone();
-    let mut current = &head_binding;
-
-    while current.is_some() {
-        len = len + 1;
-        current = &current.as_ref().unwrap().next;
+    pub fn len(node: &Option<Box<ListNode>>) -> i32 {
+        match  node {
+            None => 0,
+            Some(n) => 1 + Self::len(&n.next)
+        }
     }
-
-    len
 }
