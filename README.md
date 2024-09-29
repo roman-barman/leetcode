@@ -8,3 +8,4 @@
 6. Remove Duplicates from Sorted Array II
 7. Majority Element
 8. Rotate Array
+9. Daily Temperatures
