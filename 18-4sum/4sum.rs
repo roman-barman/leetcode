@@ -1,5 +1,3 @@
-use std::collections::HashSet;
-
 impl Solution {
     pub fn four_sum(nums: Vec<i32>, target: i32) -> Vec<Vec<i32>> {
         let len = nums.len();
@@ -12,10 +10,12 @@ impl Solution {
         let mut nums : Vec<i64> = nums.into_iter().map(|x| x as i64).collect();
         nums.sort_unstable();
 
-        let mut set : HashSet<Vec<i32>> = HashSet::with_capacity(256);
+        let mut result : Vec<Vec<i32>> = Vec::with_capacity(128);
 
-        for i in 0..len - 3 {
-            for j in i + 1..len - 2 {
+        let mut i = 0;
+        while i < len - 3 {
+            let mut j = i + 1;
+            while j < len - 2 {
                 let new_target = target - nums[i] - nums[j];
                 let mut low = j + 1;
                 let mut high = len -1;
@@ -26,18 +26,30 @@ impl Solution {
                     } else if (nums[low]) + (nums[high]) > new_target {
                         high = high - 1;
                     } else {
-                        set.insert(vec![nums[i] as i32,nums[j] as i32,nums[low] as i32,nums[high] as i32]);
-                        low = low + 1;
-                        high = high - 1;
+                        result.push(vec![nums[i] as i32,nums[j] as i32,nums[low] as i32,nums[high] as i32]);
+                        let temp_index_1 = low;
+                        let temp_index_2 = high;
+
+                        while low < high && nums[temp_index_1] == nums[low] {
+                            low = low + 1;
+                        }
+
+                        while low < high && nums[temp_index_2] == nums[high] {
+                            high = high - 1;
+                        }
                     }
                 }
+
+                while j + 1 < len && nums[j] == nums[j + 1] {
+                    j = j + 1;
+                }
+                j = j + 1;
             }
-        }
 
-        let mut result : Vec<Vec<i32>> = Vec::with_capacity(set.len());
-
-        for v in set {
-            result.push(v);
+            while i + 1 < len && nums[i] == nums[i + 1] {
+                i = i + 1;
+            }
+            i = i + 1;
         }
 
         result
