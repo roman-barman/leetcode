@@ -4,21 +4,23 @@ impl Solution {
     pub fn jump(nums: Vec<i32>) -> i32 {
         let len = nums.len();
         let last_index = len - 1;
-
-        let mut temp = vec![0;len];
+        let mut count = 0;
+        let mut end = 0;
+        let mut range = 0;
 
         for i in 0..last_index {
-            let count = temp[i] + 1;
-            let max_index = cmp::min(i+nums[i] as usize, last_index);
+            range = cmp::max(range, i + nums[i] as usize);
 
-            for j in i..=max_index {
-                if temp[j] == 0 {
-                    temp[j] = count;
-                } else if temp[j] > count {
-                    temp[j] = count;
-                }
+            if range >= last_index {
+                count = count + 1;
+                break;
+            }
+
+            if end == i {
+                end = range;
+                count = count + 1;
             }
         }
-        temp[last_index]
+        count
     }
 }
