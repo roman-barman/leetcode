@@ -18,3 +18,4 @@
 16. Counting Bits
 17. 4Sum
 18. Jump Game II
+19. Validate Binary Search Tree
