@@ -20,3 +20,4 @@
 18. Jump Game II
 19. Validate Binary Search Tree
 20. Count of Smaller Numbers After Self
+21. Construct Binary Tree from Preorder and Inorder Traversal
