@@ -23,3 +23,4 @@
 21. Construct Binary Tree from Preorder and Inorder Traversal
 22. Sort List
 23. Merge Strings Alternately
+24. Greatest Common Divisor of Strings
