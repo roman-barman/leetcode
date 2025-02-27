@@ -29,3 +29,4 @@
 27. Reverse Vowels of a String
 28. Reverse Words in a String
 29. Product of Array Except Self
+30. Increasing Triplet Subsequence<
