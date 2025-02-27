@@ -26,3 +26,4 @@
 24. Greatest Common Divisor of Strings
 25. Kids With the Greatest Number of Candies
 26. Can Place Flowers
+27. Reverse Vowels of a String
