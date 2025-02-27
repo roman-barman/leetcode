@@ -3,25 +3,27 @@ impl Solution {
         if n == 0 {
             return true;
         }
-
-        let mut flowerbed = flowerbed.clone();
+        
+        let mut previous = 0;    
         let mut n = n;
         
         for i in 0..flowerbed.len() {
             if flowerbed[i] == 1 {
+                previous = 1;
                 continue;
             }
             
-            let previous = if i == 0 { 0 } else { flowerbed[i - 1] };
             let next = if i == flowerbed.len() - 1 { 0 } else { flowerbed[i + 1] };
             
             if previous == 0 && next == 0 {
                 n = n - 1;
-                flowerbed[i] = 1;
+                previous = 1;
                 if n == 0 {
                     return true
                 }
-            }        
+            } else { 
+                previous = 0;
+            }       
         }    
         
         false
