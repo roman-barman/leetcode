@@ -35,3 +35,4 @@
 33. Is Subsequence
 34. Container With Most Water
 35. Max Number of K-Sum Pairs
+36. Maximum Average Subarray I
