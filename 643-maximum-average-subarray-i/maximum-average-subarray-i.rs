@@ -4,20 +4,19 @@ impl Solution {
             return nums[0] as f64;
         }
         
-        let mut result = f64::MIN;
+        let mut max_sum = i32::MIN;
         
-        for i in 0..nums.len() - (k - 1) as usize {
+        for i in 0..nums.len() - (k - 1)  as usize {
             let mut sum = 0;
             for j in i..i + k as usize {
                 sum += nums[j];
             }
-            let average = sum as f64 / k as f64;
             
-            if average > result {
-                result = average;
+            if sum > max_sum {
+                max_sum = sum;
             }
         }
         
-        result
+        max_sum as f64 / k as f64
     }
 }
