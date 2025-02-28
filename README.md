@@ -32,3 +32,4 @@
 30. Increasing Triplet Subsequence
 31. String Compression
 32. Move Zeroes
+33. Is Subsequence
