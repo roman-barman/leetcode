@@ -31,3 +31,4 @@
 29. Product of Array Except Self
 30. Increasing Triplet Subsequence
 31. String Compression
+32. Move Zeroes
