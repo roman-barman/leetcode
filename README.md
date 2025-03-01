@@ -37,3 +37,4 @@
 35. Max Number of K-Sum Pairs
 36. Maximum Average Subarray I
 37. Maximum Number of Vowels in a Substring of Given Length
+38. Max Consecutive Ones III
