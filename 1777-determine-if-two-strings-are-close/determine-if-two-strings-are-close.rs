@@ -29,7 +29,7 @@ impl Solution {
         true
     }
 
-    fn create_count_map(word1: String) -> HashMap<usize, HashSet<char>> {
+    fn create_count_map(word1: String) -> HashMap<usize, Vec<char>> {
         let mut chars_map: HashMap<char, usize> = HashMap::new();
         for c in word1.chars() {
             if chars_map.contains_key(&c) {
@@ -39,14 +39,12 @@ impl Solution {
             }
         }
 
-        let mut count_map: HashMap<usize, HashSet<char>>  = HashMap::new();
+        let mut count_map: HashMap<usize, Vec<char>>  = HashMap::new();
         for (key, value) in chars_map {
             if count_map.contains_key(&value) {
-                count_map.get_mut(&value).unwrap().insert(key);
+                count_map.get_mut(&value).unwrap().push(key);
             } else {
-                let mut set = HashSet::new();
-                set.insert(key);
-                count_map.insert(value, set);
+                count_map.insert(value, vec![key]);
             }
         }
         
