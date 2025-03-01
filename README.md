@@ -39,3 +39,4 @@
 37. Maximum Number of Vowels in a Substring of Given Length
 38. Max Consecutive Ones III
 39. Longest Subarray of 1's After Deleting One Element
+40. Find the Highest Altitude
