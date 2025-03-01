@@ -43,3 +43,4 @@
 41. Find Pivot Index
 42. Find the Difference of Two Arrays
 43. Unique Number of Occurrences
+44. Determine if Two Strings Are Close
