@@ -1,29 +1,24 @@
 impl Solution {
     pub fn longest_ones(nums: Vec<i32>, k: i32) -> i32 {
-        let mut left = 0;
-        let mut max_length = 0;
-        let mut zero_count = 0;
-
-        for right in 0..nums.len() {
-            if nums[right] == 0 {
-                zero_count += 1;
+        let mut k = k;
+        let len = nums.len();
+        let mut start = 0;
+        let mut end = 0;
+        while end < len {
+            if nums[end] == 0 {
+                k -= 1;
             }
 
-            while zero_count > k {
-                if nums[left] == 0 {
-                    zero_count -= 1;
+            if k < 0 {
+                if nums[start] == 0 { 
+                    k += 1;
                 }
-                left += 1;
+                start += 1;
             }
-
-            let length = right - left + 1;
-            max_length = if max_length > length {
-                max_length
-            } else {
-                length
-            };
+            
+            end += 1;
         }
 
-        max_length as i32
+        (end - start) as i32
     }
 }
