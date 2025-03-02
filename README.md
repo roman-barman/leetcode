@@ -45,3 +45,4 @@
 43. Unique Number of Occurrences
 44. Determine if Two Strings Are Close
 45. Equal Row and Column Pairs
+46. Removing Stars From a String
