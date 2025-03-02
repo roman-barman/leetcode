@@ -46,3 +46,4 @@
 44. Determine if Two Strings Are Close
 45. Equal Row and Column Pairs
 46. Removing Stars From a String
+47. Asteroid Collision
